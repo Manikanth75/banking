@@ -1,1 +1,178 @@
 @import "tailwindcss";
+
+/* ========== Custom Theme (colors, fonts, shadows, etc.) ========== */
+@theme {
+  /* Font sizes used in the tutorial */
+  --text-10: 10px;
+  --text-12: 12px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-26: 26px;
+  --text-30: 30px;
+  --text-36: 36px;
+
+  /* Common colors from Horizon */
+  --color-bank-gradient: linear-gradient(90deg, #0179FE 0%, #4893FF 100%);
+  --color-gray-25: #FCFCFD;
+  --color-gray-200: #EAECF0;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-900: #101828;
+  --color-blue-25: #F5FAFF;
+  --color-blue-600: #1570EF;
+  --color-black-1: #000000;
+  --color-black-2: #344054;
+
+  /* Shadows */
+  --shadow-chart: 0px 4px 12px rgba(16, 24, 40, 0.05);
+  --shadow-creditCard: 8px 10px 16px 0px rgba(0, 0, 0, 0.05);
+  --shadow-form: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-profile: 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+}
+
+/* ========== Base resets ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #5c5c7b;
+  border-radius: 50px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
+}
+
+/* ========== Custom Utilities (Tailwind v4 style) ========== */
+@utility text-10 {
+  font-size: 10px;
+  line-height: 14px;
+}
+@utility text-12 {
+  font-size: 12px;
+  line-height: 16px;
+}
+@utility text-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+@utility text-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+@utility text-18 {
+  font-size: 18px;
+  line-height: 22px;
+}
+@utility text-20 {
+  font-size: 20px;
+  line-height: 24px;
+}
+@utility text-24 {
+  font-size: 24px;
+  line-height: 30px;
+}
+@utility text-26 {
+  font-size: 26px;
+  line-height: 32px;
+}
+@utility text-30 {
+  font-size: 30px;
+  line-height: 38px;
+}
+@utility text-36 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility header-2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #101828;
+}
+
+/* ========== Component classes ========== */
+.total-balance {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #EAECF0;
+  padding: 1rem;
+  box-shadow: var(--shadow-chart);
+}
+
+@media (min-width: 640px) {
+  .total-balance {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+.total-balance-chart {
+  display: flex;
+  width: 100%;
+  max-width: 100px;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .total-balance-chart {
+    max-width: 120px;
+  }
+}
+
+.total-balance-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475467;
+}
+
+.total-balance-amount {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+}
+
+@media (min-width: 1024px) {
+  .total-balance-amount {
+    font-size: 30px;
+  }
+}
+
+/* Add more classes from the old globals.css here the same way if needed */
