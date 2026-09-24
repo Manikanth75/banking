@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* ========== Custom Theme (colors, fonts, shadows, etc.) ========== */
+/* ========== Custom Theme ========== */
 @theme {
-  /* Font sizes used in the tutorial */
+  /* Font sizes */
   --text-10: 10px;
   --text-12: 12px;
   --text-14: 14px;
@@ -14,7 +14,7 @@
   --text-30: 30px;
   --text-36: 36px;
 
-  /* Common colors from Horizon */
+  /* Colors */
   --color-bank-gradient: linear-gradient(90deg, #0179FE 0%, #4893FF 100%);
   --color-gray-25: #FCFCFD;
   --color-gray-200: #EAECF0;
@@ -33,14 +33,13 @@
   --shadow-profile: 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
 }
 
-/* ========== Base resets ========== */
+/* ========== Base ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -49,29 +48,7 @@
   scrollbar-width: none;
 }
 
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-radius: 2px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #dddddd;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #5c5c7b;
-  border-radius: 50px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #7878a3;
-}
-
-/* ========== Custom Utilities (Tailwind v4 style) ========== */
+/* ========== Custom Utilities ========== */
 @utility text-10 {
   font-size: 10px;
   line-height: 14px;
@@ -125,7 +102,124 @@
   color: #101828;
 }
 
-/* ========== Component classes ========== */
+/* ========== Sidebar ========== */
+.sidebar {
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #EAECF0;
+  background-color: white;
+  padding-top: 2rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .sidebar {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sidebar {
+    padding: 1.5rem;
+    width: 355px;
+  }
+}
+
+.sidebar-logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000000;
+}
+
+@media (max-width: 1280px) {
+  .sidebar-logo {
+    display: none;
+  }
+}
+
+.sidebar-link {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .sidebar-link {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .sidebar-link {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sidebar-link {
+    justify-content: flex-start;
+  }
+}
+
+.sidebar-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #344054;
+}
+
+@media (max-width: 1280px) {
+  .sidebar-label {
+    display: none;
+  }
+}
+
+/* ========== Header Box ========== */
+.header-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.header-box-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+}
+
+@media (min-width: 1024px) {
+  .header-box-title {
+    font-size: 30px;
+  }
+}
+
+.header-box-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  color: #475467;
+}
+
+@media (min-width: 1024px) {
+  .header-box-subtext {
+    font-size: 16px;
+  }
+}
+
+/* ========== Total Balance ========== */
 .total-balance {
   display: flex;
   width: 100%;
@@ -175,4 +269,32 @@
   }
 }
 
-/* Add more classes from the old globals.css here the same way if needed */
+/* ========== Home Layout ========== */
+.home {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.home-content {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.25rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .home-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
